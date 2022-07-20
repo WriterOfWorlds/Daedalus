@@ -26,5 +26,11 @@
   "homepage": "https://github.com/WriterOfWorlds/Daedalus#readme",
   "devDependencies": {
     "electron": "^19.0.8"
+  },
+  "dependencies": {
+    "create-vue": "^3.3.0",
+    "node": "^18.5.0",
+    "npm": "^8.14.0",
+    "vue": "^3.2.37"
   }
 }

@@ -6,3 +6,40 @@
       http-equiv="X-Content-Security-Policy"
       content="default-src 'self'; script-src 'self'"
     />
+
+<script>
+		function search(query) {
+			axios.get("https://api.modrinth.com/v2/search?query=" + query + "&limit=" + document.getElementById('limit').value)
+			.then(response =>{
+				console.log(response.data)
+				let text = "<table>"
+				for (let x in response.data.hits) {
+					text += "<tr><td>" + response.data.hits[x].title + "</td></tr>";
+				}
+				text += "</table>"
+				document.getElementById("api-call").innerHTML = text;
+			})
+		}
+		
+		document.getElementById('inp').onkeypress = function() {
+			search(document.getElementById("inp").value)
+		};
+	</script>
+	
+	
+	
+	text += "</table>"
+					document.getElementById("api-call").innerHTML = text;
+
+
+search(query) {
+				axios.get("https://api.modrinth.com/v2/search?query=" + query + "&limit=" + document.getElementById('limit').value)
+				.then(response =>{
+					console.log(response.data)
+					let mods = []
+					for (let x in response.data.hits) {
+						mods.push(x);
+					}
+					this.items = mods;
+				})
+			}
